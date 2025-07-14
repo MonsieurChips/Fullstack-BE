@@ -16,10 +16,7 @@ exports.getAllLessons = async (req, res) => {
   }
 };
 
-/**
- * Searches for lessons based on a query string.
- * The search is case-insensitive and checks multiple fields.
- */
+
 exports.searchLessons = async (req, res) => {
   const { query } = req.query;
   if (!query) {
