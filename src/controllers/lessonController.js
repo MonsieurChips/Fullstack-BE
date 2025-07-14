@@ -63,7 +63,7 @@ exports.updateLesson = async (req, res) => {
     const db = getDb();
     const result = await db
       .collection(LESSONS_COLLECTION)
-      .updateOne({ _id: new ObjectId(id) }, { $set: updateData });
+      .updateOne({ _id: id }, { $set: updateData });
 
     if (result.matchedCount === 0) {
       return res.status(404).json({ message: "Lesson not found" });
