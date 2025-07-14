@@ -5,12 +5,8 @@ const { ObjectId } = require("mongodb");
 
 const LESSONS_COLLECTION = "Lessons";
 
-/**
- * Retrieves all lessons from the database.
- */
 exports.getAllLessons = async (req, res) => {
   try {
-    
     const db = getDb();
     console.log(await db.collections());
     const lessons = await db.collection(LESSONS_COLLECTION).find({}).toArray();
