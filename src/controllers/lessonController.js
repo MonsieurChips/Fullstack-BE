@@ -1,5 +1,3 @@
-// src/controllers/lessonController.js
-
 const { getDb } = require("../utils/database");
 const { ObjectId } = require("mongodb");
 
