@@ -49,15 +49,12 @@ exports.searchLessons = async (req, res) => {
   }
 };
 
-/**
- * Updates a specific lesson by its ID.
- * This is used to update the number of available spaces after an order.
- */
+
+
 exports.updateLesson = async (req, res) => {
   const { id } = req.params;
   const updateData = req.body;
 
-  // Basic validation
   if (!ObjectId.isValid(id)) {
     return res.status(400).json({ message: "Invalid lesson ID format" });
   }
