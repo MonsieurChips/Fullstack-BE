@@ -25,13 +25,13 @@ exports.searchLessons = async (req, res) => {
 
   try {
     const db = getDb();
-    // Create a case-insensitive regular expression for the search
+
     const searchRegex = new RegExp(query, "i");
 
     const lessons = await db
       .collection(LESSONS_COLLECTION)
       .find({
-        // The $or operator allows searching across multiple fields
+
         $or: [
           { name: searchRegex },
           { location: searchRegex },
